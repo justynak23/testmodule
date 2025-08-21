@@ -1,0 +1,11 @@
+version: 1
+module_version: "0.0.1"
+
+test_defaults:
+  # ❌ Wrong key — should be terraform_workflow_tool
+  workflow_tool: OPEN_TOFU
+  opentofu_version: "1.10.5"
+
+tests:
+  - name: init
+    command: ["tofu", "init", "-backend=false"]
