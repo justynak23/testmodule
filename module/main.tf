@@ -7,20 +7,14 @@ terraform {
   }
 }
 
-provider "aws" {
-  region = "us-east-2"
-
-  default_tags {
-    tags = {
-      CreatedBy = "Terraform"
-    }
-  }
+resource "aws_s3_bucket" "This" {
+  bucket = "my-bucket"
 }
 
-resource "aws_s3_bucket" "This" {
-  bucket = "sillybucketname1231243213"
+resource "aws_s3_bucket_versioning" "This" {
+  bucket = aws_s3_bucket.This.id
 
-  versioning {
-    enabled = false
+  versioning_configuration {
+    status = "Enabled"
   }
 }
