@@ -1,6 +1,6 @@
 version: 1
 
-module_version: 0.0.1
+module_version: 0.0.2
 
 tests:
   - name: Test the module with 1.5.7
